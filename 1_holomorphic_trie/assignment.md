@@ -59,5 +59,5 @@ data TrieEdge a = Edge a Bool (Trie a)
   isRot13SpelledCorrect :: [String] -> String -> Bool
   ```
 
-6. Extra credit: Wrap this in a full program, which takes a dictionary file and a word on the command line, and checks the spelling of the given word.
+6. Extra credit: Wrap this in a full program, which takes a dictionary file and a some text on the command line, and checks the spelling of the text.
 7. Extra credit: Instead of simply returning whether the word is correctly spelled, return a list of suggestions. (Hint: you'll probably want to define a function `getSuggestions :: [String] -> String -> Maybe [String]` which serves the same purpose as `isRot13SpelledCorrect` does above).
