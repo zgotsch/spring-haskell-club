@@ -10,7 +10,13 @@ There is a module included in this repo with the Trie data structure and some de
 
 -- a trie is a list of edges
 type Trie a = [TrieEdge a]
--- value of the incoming edge, does this node end a word, children
+-- a trie edge is a combination of three values
+--   the value on the edge, of type a (Char for our trie)
+--   whether this edge ends a word (needed to distinguish "a" from "apple")
+--   the child trie
+--
+-- a trie which contains "a" and "apple" looks like:
+-- [Edge 'a' True [Edge 'p' False [Edge 'p' False [Edge 'l' False [Edge 'e' True []]]]]]
 data TrieEdge a = Edge a Bool (Trie a)
   deriving Show
 
