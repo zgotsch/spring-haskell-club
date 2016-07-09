@@ -47,10 +47,10 @@ data TrieEdge a = Edge a Bool (Trie a)
   contains :: Trie Char -> String -> Bool
   ```
 
-2. Write an instance of `Functor` for `Trie`. Ensure that your implementation satisfies the `Functor` laws.
+2. Write an instance of `Functor` for `TrieEdge`. Ensure that your implementation satisfies the `Functor` laws. You will be able to map over a `Trie` by mapping over the list first and then the `TrieEdge`s.
 
   ```haskell
-  fmap :: (a -> b) -> Trie a -> Trie b
+  fmap :: (a -> b) -> TrieEdge a -> TrieEdge b
   ```
 
 5. Write a function which takes a dictionary as a list of words, constructs a trie, and uses that trie to check whether a given ROT13'ed string is spelled correctly. This function should never ROT13 the input string. (You can use the dictionary included in `trie.hs` to debug.)
